@@ -59,7 +59,12 @@ hunter_add_package(gauze)
 find_package(gauze CONFIG REQUIRED)
 
 enable_testing()
-gauze_add_test(NAME foo COMMAND foo)
+
+if(IOS AND IGNORE_IOS_TEST)
+  # ignore native test
+else()
+  gauze_add_test(NAME foo COMMAND foo)
+endif()
 
 # }
 
