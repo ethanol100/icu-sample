@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
+include("cmake/module/icu_sample_upload_config.cmake")
+
 include("cmake/HunterGate.cmake")
 HunterGate(
     URL "https://github.com/ruslo/hunter/archive/943d8317e7435e5e3cb5bb958943f6288f8616c5.zip"
