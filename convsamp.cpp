@@ -214,7 +214,7 @@ UErrorCode convsample_02()
   return U_ZERO_ERROR;
 }
 
-int main()
+int gauze_main(int, char**)
 {
 
   printf("Default Converter=%s\n", ucnv_getDefaultName() );
