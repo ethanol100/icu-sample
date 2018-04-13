@@ -65,9 +65,10 @@ matrix:
 
     # macOS {
 
-    - os: osx
-      osx_image: xcode9.2
-      env: TOOLCHAIN=ios-nocodesign-11-2-dep-9-3 BUILD_SHARED_LIBS=OFF
+    # FIXME
+    # - os: osx
+    #   osx_image: xcode9.2
+    #   env: TOOLCHAIN=ios-nocodesign-11-2-dep-9-3 BUILD_SHARED_LIBS=OFF
 
     - os: osx
       osx_image: xcode9.2
