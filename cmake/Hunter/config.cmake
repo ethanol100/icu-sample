@@ -1,0 +1,3 @@
+if(ARCHIVE_MODE)
+  hunter_config(ICU CMAKE_ARCH ICU_DATA_ARCHIVE_MODE=ON)
+endif()

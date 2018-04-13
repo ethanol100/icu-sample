@@ -6,9 +6,12 @@ include("cmake/HunterGate.cmake")
 HunterGate(
     URL "https://github.com/ruslo/hunter/archive/4b12860c63df810cf7fc47afa40ce10e3cebc03b.zip"
     SHA1 "b90878661a1a8ddf70df0cd97a8ff79bd7cf4a8c"
+    LOCAL
 )
 
 project(icu_sample)
+
+option(ARCHIVE_MODE "ICU data archive mode" OFF)
 
 hunter_add_package(ICU)
 find_package(ICU CONFIG REQUIRED)
