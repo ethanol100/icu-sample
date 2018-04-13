@@ -78,7 +78,7 @@ else()
     set(args "")
   endif()
 
-  gauze_add_test(NAME foo COMMAND foo ${args})
+  gauze_add_test(NAME foo COMMAND foo $<GAUZE_RESOURCE_FILE:${args}>)
 
   if(WIN32 OR CYGWIN)
     set(new_path "${ICU_ROOT}/bin")
