@@ -4,8 +4,8 @@ include("cmake/module/icu_sample_upload_config.cmake")
 
 include("cmake/HunterGate.cmake")
 HunterGate(
-    URL "https://github.com/ruslo/hunter/archive/3e60ed786f40b992065c3b7719a63dbc702a7edd.zip"
-    SHA1 "fea947a99aed64547c912ac050a2636da45c6020"
+    URL "https://github.com/ruslo/hunter/archive/fa4424e7c4380521b23ebeb7901616e8d5fac1f3.zip"
+    SHA1 "11544e317085652c2ab72813684dd851e7e68dcc"
     LOCAL
 )
 
@@ -68,7 +68,7 @@ enable_testing()
 if(IOS AND IGNORE_IOS_TEST)
   # ignore native test
 else()
-  gauze_add_test(NAME foo COMMAND foo)
+  gauze_add_test(NAME foo COMMAND foo "${ICU_DATA_FILE}")
 
   if(WIN32 OR CYGWIN)
     set(new_path "${ICU_ROOT}/bin")
