@@ -73,12 +73,12 @@ if(IOS AND IGNORE_IOS_TEST)
   # ignore native test
 else()
   if(ARCHIVE_MODE)
-    set(args ${ICU_DATA_FILE})
+    set(args $<GAUZE_RESOURCE_FILE:${ICU_DATA_FILE}>)
   else()
     set(args "")
   endif()
 
-  gauze_add_test(NAME foo COMMAND foo $<GAUZE_RESOURCE_FILE:${args}>)
+  gauze_add_test(NAME foo COMMAND foo ${args})
 
   if(WIN32 OR CYGWIN)
     set(new_path "${ICU_ROOT}/bin")
