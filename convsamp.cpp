@@ -40,6 +40,8 @@
 #include "unicode/uloc.h"
 #include "unicode/unistr.h"
 
+#include "unicode/putil.h" // u_setDataDirectory
+
 #include "flagcb.h"
 
 /* Some utility functions */
@@ -214,8 +216,27 @@ UErrorCode convsample_02()
   return U_ZERO_ERROR;
 }
 
-int gauze_main(int, char**)
+int gauze_main(int argc, char** argv)
 {
+#if defined(ARCHIVE_MODE)
+  if (argc != 2) {
+    printf("Expected 2 arguments, %d given\n", argc);
+    return 1;
+  }
+
+  // Path will be passed in CMake format, it will be the same
+  // for all platforms.
+  const char* dirSeparator = "/";
+  const std::string dataFile = argv[1];
+  const std::string::size_type index = dataFile.find_last_of(dirSeparator);
+  if (index == std::string::npos) {
+    printf("Symbol not found");
+    return 1;
+  }
+
+  const std::string dataDir = dataFile.substr(0, index);
+  u_setDataDirectory(dataDir.c_str());
+#endif
 
   printf("Default Converter=%s\n", ucnv_getDefaultName() );
 

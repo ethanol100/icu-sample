@@ -58,6 +58,10 @@ endif()
 add_executable(foo convsamp.cpp flagcb.c flagcb.h)
 target_link_libraries(foo PUBLIC ICU::uc)
 
+if(ARCHIVE_MODE)
+  target_compile_definitions(foo PRIVATE ARCHIVE_MODE)
+endif()
+
 # Run native tests {
 
 hunter_add_package(gauze)
@@ -68,7 +72,13 @@ enable_testing()
 if(IOS AND IGNORE_IOS_TEST)
   # ignore native test
 else()
-  gauze_add_test(NAME foo COMMAND foo "${ICU_DATA_FILE}")
+  if(ARCHIVE_MODE)
+    set(args ${ICU_DATA_FILE})
+  else()
+    set(args "")
+  endif()
+
+  gauze_add_test(NAME foo COMMAND foo ${args})
 
   if(WIN32 OR CYGWIN)
     set(new_path "${ICU_ROOT}/bin")
