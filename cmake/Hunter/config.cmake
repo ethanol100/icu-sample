@@ -1,3 +1,7 @@
 if(ARCHIVE_MODE)
-  hunter_config(ICU CMAKE_ARCH ICU_DATA_ARCHIVE_MODE=ON)
+  hunter_config(
+      ICU
+      VERSION ${HUNTER_ICU_VERSION}
+      CMAKE_ARGS ICU_DATA_ARCHIVE_MODE=ON
+  )
 endif()
