@@ -79,7 +79,8 @@ find_package(gauze CONFIG REQUIRED)
 enable_testing()
 
 if(IOS AND IGNORE_IOS_TEST)
-  # ignore native test
+  # ignore native test, just link to avoid build error
+  target_link_libraries(foo PUBLIC gauze::gauze)
 else()
   if(ARCHIVE_MODE)
     set(args $<GAUZE_RESOURCE_FILE:${ICU_DATA_FILE}>)
