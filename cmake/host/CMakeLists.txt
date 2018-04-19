@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
+option(HUNTER_STATUS_DEBUG "Print debug info" ON)
+
 include("${CMAKE_CURRENT_LIST_DIR}/../HunterGate.cmake")
 
 HunterGate(
