@@ -15,9 +15,6 @@ string(COMPARE EQUAL "${CMAKE_SYSTEM_NAME}" "WindowsStore" is_windows_store)
 
 option(ARCHIVE_MODE "ICU data archive mode" OFF)
 
-hunter_add_package(ICU)
-find_package(ICU CONFIG REQUIRED)
-
 if(CMAKE_CROSSCOMPILING)
   # When cross-compiling pkgdata/icupkg tools build with host toolchain
   include(hunter_experimental_add_host_project)
@@ -34,6 +31,10 @@ if(CMAKE_CROSSCOMPILING)
 else()
   # Variables ICU_*_EXECUTABLE provided by package itself
 endif()
+
+hunter_add_package(ICU)
+find_package(ICU CONFIG REQUIRED)
+
 
 # Check imported targets {
 
