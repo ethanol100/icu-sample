@@ -11,16 +11,19 @@ environment:
       TOOLCHAIN: "vs-15-2017-win64-store-10-cxx17"
       BUILD_SHARED_LIBS: ON
       ARCHIVE_MODE: OFF
+      HUNTER_BINARY_DIR: C:\__BIN
 
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       TOOLCHAIN: "vs-15-2017-win64-store-10-cxx17"
       BUILD_SHARED_LIBS: OFF
       ARCHIVE_MODE: OFF
+      HUNTER_BINARY_DIR: C:\__BIN
 
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       TOOLCHAIN: "vs-15-2017-win64-store-10-cxx17"
       BUILD_SHARED_LIBS: OFF
       ARCHIVE_MODE: ON
+      HUNTER_BINARY_DIR: C:\__BIN
 
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       TOOLCHAIN: "vs-15-2017-win64"
