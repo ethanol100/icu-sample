@@ -87,7 +87,11 @@ else()
     set(args "")
   endif()
 
-  gauze_add_test(NAME foo COMMAND foo ${args})
+  if(is_windows_store)
+    # TODO: How to run test?
+  else()
+    gauze_add_test(NAME foo COMMAND foo ${args})
+  endif()
 
   if(WIN32 OR CYGWIN)
     set(new_path "${ICU_ROOT}/bin")
