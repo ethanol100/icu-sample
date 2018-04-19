@@ -11,6 +11,8 @@ HunterGate(
 
 project(icu_sample)
 
+string(COMPARE EQUAL "${CMAKE_SYSTEM_NAME}" "WindowsStore" is_windows_store)
+
 option(ARCHIVE_MODE "ICU data archive mode" OFF)
 
 hunter_add_package(ICU)
@@ -21,15 +23,21 @@ if(CMAKE_CROSSCOMPILING)
   include(hunter_experimental_add_host_project)
   hunter_experimental_add_host_project(cmake/host)
 
-  set(ICU_PKGDATA_EXECUTABLE "${HUNTER_HOST_ROOT}/bin/pkgdata")
-  set(ICU_ICUPKG_EXECUTABLE "${HUNTER_HOST_ROOT}/bin/icupkg")
+  if(WIN32)
+    set(suffix .exe)
+  else()
+    set(suffix "")
+  endif()
+
+  set(ICU_PKGDATA_EXECUTABLE "${HUNTER_HOST_ROOT}/bin/pkgdata${suffix}")
+  set(ICU_ICUPKG_EXECUTABLE "${HUNTER_HOST_ROOT}/bin/icupkg${suffix}")
 else()
   # Variables ICU_*_EXECUTABLE provided by package itself
 endif()
 
 # Check imported targets {
 
-if(ANDROID OR IOS)
+if(ANDROID OR IOS OR is_windows_store)
   set(tu_lib "")
 else()
   set(tu_lib tu)
