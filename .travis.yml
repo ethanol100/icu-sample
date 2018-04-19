@@ -36,39 +36,70 @@ matrix:
     # Linux {
 
     - os: linux
-      env: TOOLCHAIN=android-ndk-r16b-api-16-armeabi-v7a-clang-libcxx14 BUILD_SHARED_LIBS=ON ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=android-ndk-r16b-api-16-armeabi-v7a-clang-libcxx14
+        BUILD_SHARED_LIBS=ON
+        ARCHIVE_MODE=OFF
 
     - os: linux
-      env: TOOLCHAIN=android-ndk-r16b-api-16-armeabi-v7a-clang-libcxx14 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=android-ndk-r16b-api-16-armeabi-v7a-clang-libcxx14
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=OFF
 
     - os: linux
-      env: TOOLCHAIN=android-ndk-r16b-api-16-armeabi-v7a-clang-libcxx14 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=ON
+      env: >
+        TOOLCHAIN=android-ndk-r16b-api-16-armeabi-v7a-clang-libcxx14
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=ON
 
     # FIXME (emulator image)
     # - os: linux
-    #   env: TOOLCHAIN=android-ndk-r16b-api-16-x86-clang-libcxx14 BUILD_SHARED_LIBS=OFF
+    #   env: >
+    #     TOOLCHAIN=android-ndk-r16b-api-16-x86-clang-libcxx14
+    #     BUILD_SHARED_LIBS=OFF
 
     # FIXME (emulator image)
     # - os: linux
-    #   env: TOOLCHAIN=android-ndk-r16b-api-21-arm64-v8a-neon-clang-libcxx14 BUILD_SHARED_LIBS=ON
+    #   env: >
+    #     TOOLCHAIN=android-ndk-r16b-api-21-arm64-v8a-neon-clang-libcxx14
+    #     BUILD_SHARED_LIBS=ON
 
     - os: linux
-      env: TOOLCHAIN=clang-cxx17 BUILD_SHARED_LIBS=ON ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=clang-cxx17
+        BUILD_SHARED_LIBS=ON
+        ARCHIVE_MODE=OFF
 
     - os: linux
-      env: TOOLCHAIN=clang-cxx17 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=clang-cxx17
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=OFF
 
     - os: linux
-      env: TOOLCHAIN=clang-cxx17 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=ON
+      env: >
+        TOOLCHAIN=clang-cxx17
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=ON
 
     - os: linux
-      env: TOOLCHAIN=gcc-7-cxx17 BUILD_SHARED_LIBS=ON ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=gcc-7-cxx17
+        BUILD_SHARED_LIBS=ON
+        ARCHIVE_MODE=OFF
 
     - os: linux
-      env: TOOLCHAIN=gcc-7-cxx17 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=gcc-7-cxx17
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=OFF
 
     - os: linux
-      env: TOOLCHAIN=gcc-7-cxx17 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=ON
+      env: >
+        TOOLCHAIN=gcc-7-cxx17
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=ON
 
     # }
 
@@ -76,31 +107,51 @@ matrix:
 
     - os: osx
       osx_image: xcode9.3
-      env: TOOLCHAIN=ios-nocodesign-11-3-dep-9-3 BUILD_SHARED_LIBS=OFF
+      env: >
+        TOOLCHAIN=ios-nocodesign-11-3-dep-9-3
+        BUILD_SHARED_LIBS=OFF
 
     - os: osx
       osx_image: xcode9.3
-      env: TOOLCHAIN=osx-10-13-make-cxx14 BUILD_SHARED_LIBS=ON ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=osx-10-13-make-cxx14
+        BUILD_SHARED_LIBS=ON
+        ARCHIVE_MODE=OFF
 
     - os: osx
       osx_image: xcode9.3
-      env: TOOLCHAIN=osx-10-13-make-cxx14 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=osx-10-13-make-cxx14
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=OFF
 
     - os: osx
       osx_image: xcode9.3
-      env: TOOLCHAIN=osx-10-13-make-cxx14 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=ON
+      env: >
+        TOOLCHAIN=osx-10-13-make-cxx14
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=ON
 
     - os: osx
       osx_image: xcode9.3
-      env: TOOLCHAIN=osx-10-13-cxx14 BUILD_SHARED_LIBS=ON ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=osx-10-13-cxx14
+        BUILD_SHARED_LIBS=ON
+        ARCHIVE_MODE=OFF
 
     - os: osx
       osx_image: xcode9.3
-      env: TOOLCHAIN=osx-10-13-cxx14 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=OFF
+      env: >
+        TOOLCHAIN=osx-10-13-cxx14
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=OFF
 
     - os: osx
       osx_image: xcode9.3
-      env: TOOLCHAIN=osx-10-13-cxx14 BUILD_SHARED_LIBS=OFF ARCHIVE_MODE=ON
+      env: >
+        TOOLCHAIN=osx-10-13-cxx14
+        BUILD_SHARED_LIBS=OFF
+        ARCHIVE_MODE=ON
 
     # }
 
