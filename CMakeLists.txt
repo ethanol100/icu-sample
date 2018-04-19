@@ -90,6 +90,7 @@ else()
 
   if(is_windows_store)
     # TODO: How to run test?
+    target_link_libraries(foo PUBLIC gauze::gauze)
   else()
     gauze_add_test(NAME foo COMMAND foo ${args})
 
