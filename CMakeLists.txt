@@ -91,23 +91,23 @@ else()
     # TODO: How to run test?
   else()
     gauze_add_test(NAME foo COMMAND foo ${args})
-  endif()
 
-  if(WIN32 OR CYGWIN)
-    set(new_path "${ICU_ROOT}/bin")
-    list(APPEND new_path $ENV{PATH})
+    if(WIN32 OR CYGWIN)
+      set(new_path "${ICU_ROOT}/bin")
+      list(APPEND new_path $ENV{PATH})
 
-    if(WIN32)
-      string(REPLACE ";" "\;" new_path "${new_path}")
-    elseif(CYGWIN)
-      string(REPLACE ";" ":" new_path "${new_path}")
-    else()
-      message(FATAL_ERROR "Unreachable")
+      if(WIN32)
+        string(REPLACE ";" "\;" new_path "${new_path}")
+      elseif(CYGWIN)
+        string(REPLACE ";" ":" new_path "${new_path}")
+      else()
+        message(FATAL_ERROR "Unreachable")
+      endif()
+
+      set_tests_properties(
+          foo PROPERTIES ENVIRONMENT "PATH=${new_path}"
+      )
     endif()
-
-    set_tests_properties(
-        foo PROPERTIES ENVIRONMENT "PATH=${new_path}"
-    )
   endif()
 endif()
 
