@@ -44,6 +44,8 @@
 
 #include "flagcb.h"
 
+#include "layout/LETypes.h" // Test include, do not remove
+
 /* Some utility functions */
 
 static const UChar kNone[] = { 0x0000 };
