@@ -4,8 +4,8 @@ include("cmake/module/icu_sample_upload_config.cmake")
 
 include("cmake/HunterGate.cmake")
 HunterGate(
-    URL "https://github.com/ruslo/hunter/archive/005cad11479c0546dee5fe13ce3779e3aea26496.zip"
-    SHA1 "81f2eb1f052c2c8fffe17d52e42804635516868a"
+    URL "https://github.com/ruslo/hunter/archive/07dbd7563f87c54de738f13a1391347a427c0be0.zip"
+    SHA1 "c501a9ce42f5a8c447781141b8d53a6b7b8dfdf6"
     LOCAL
 )
 
@@ -34,7 +34,6 @@ endif()
 
 hunter_add_package(ICU)
 find_package(ICU CONFIG REQUIRED)
-
 
 # Check imported targets {
 
