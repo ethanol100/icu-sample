@@ -1,6 +1,6 @@
 set(
     HUNTER_CACHE_SERVERS
-    "https://github.com/ingenue/hunter-cache"
+    "https://github.com/upload-bot-5n7aq/hunter-cache"
     CACHE
     STRING
     "Default cache server"
