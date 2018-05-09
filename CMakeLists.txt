@@ -4,8 +4,8 @@ include("cmake/module/icu_sample_upload_config.cmake")
 
 include("cmake/HunterGate.cmake")
 HunterGate(
-    URL "https://github.com/ruslo/hunter/archive/v0.20.60.tar.gz"
-    SHA1 "35a23a3e2f8a2c87f6762c43f3cc64a0bee50943"
+    URL "https://github.com/ruslo/hunter/archive/005cad11479c0546dee5fe13ce3779e3aea26496.zip"
+    SHA1 "81f2eb1f052c2c8fffe17d52e42804635516868a"
     LOCAL
 )
 
